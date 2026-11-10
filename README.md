@@ -1,6 +1,6 @@
 # Notes Frontend
 
-Laravel frontend for the Notes API (`../task_backend`). Pages are plain Blade views.
+Laravel frontend for the Notes API (`../task_backend`). Pages are Blade views styled with Bootstrap 5 (loaded from a CDN, no build step).
 Every request goes through `App\Services\NotesApi`, which calls the API from the server
 and sends the JWT stored in the session as a Bearer token.
 

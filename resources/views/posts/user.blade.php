@@ -3,13 +3,17 @@
 @section('title', 'Posts by '.$user['name'])
 
 @section('content')
-    <h1>Posts by {{ $user['name'] }}</h1>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="h3 mb-3">Posts by {{ $user['name'] }}</h1>
 
-    @forelse ($data as $post)
-        @include('posts.item', ['post' => $post, 'authorId' => $user['_id'], 'authorName' => $user['name']])
-    @empty
-        <p>{{ $user['name'] }} has not posted anything yet.</p>
-    @endforelse
+            @forelse ($data as $post)
+                @include('posts.item', ['post' => $post, 'authorId' => $user['_id'], 'authorName' => $user['name']])
+            @empty
+                <p class="text-muted">{{ $user['name'] }} has not posted anything yet.</p>
+            @endforelse
 
-    @include('partials.pagination')
+            @include('partials.pagination')
+        </div>
+    </div>
 @endsection
